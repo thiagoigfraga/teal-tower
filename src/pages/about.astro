@@ -2,15 +2,47 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const skillsColor = "green";
 ---
 
 <Layout>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <style define:vars={{skillsColor}}>
+      .skills {
+        color: var(--skillsColor);
+        font-size: 3rem;
+        list-style: none;
+      }
+    </style>
+  </head>
     <body>
         <h1>My Astro Site</h1>
         <h1>About Me</h1>
         <h2>... and my new Astro site!</h2>
+
+        {skills.length > 0 && 
+        <div>
+          <h3>My current skills are:</h3>
+          <ul>
+            {skills.map((skill) => (
+              <li class="skills">{skill}</li>
+            ))}
+          </ul>
       
         <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
       

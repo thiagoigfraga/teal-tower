@@ -1,0 +1,9 @@
+---
+const {site} = Astro.props;
+const title = site.charAt(0).toUpperCase() + site.slice(1);
+---
+
+{site=="home" ? 
+    <a href="/" class="header-link">{title}</a> : 
+    <a href={`/${site}/`}>{title}</a>
+}	

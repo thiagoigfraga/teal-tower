@@ -1,3 +1,8 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,10 +13,8 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-		<slot />
+		<Header/>
+		<Footer/>
 	</body>
 </html>
 
