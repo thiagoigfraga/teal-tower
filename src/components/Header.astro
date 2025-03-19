@@ -1,7 +1,15 @@
 ---
+import Hamburguer from "./Hamburguer.astro";
 import Link from "./Link.astro";
 ---
-
-<Link site="home"/>
-<Link site="about"/>
-<Link site="blog"/>
+<header>
+    <div class="nav-links">
+        
+        <nav>
+            <Link site="home"/>
+            <Link site="about"/>
+            <Link site="blog"/>
+        </nav>
+    </div>
+<Hamburguer/>
+</header>
